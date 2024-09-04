@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <script>
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function getComputerChoice(){
+      const choice = ["Rock","Paper","Scissors"];
+      let randomNum = Math.floor(Math.random() * 3);
+      return choice[randomNum];
+  }
+
+  function getHumanChoice(){
+    const choice = prompt("Choose - Rock, Paper or Scissors: ");
+    return choice;
+  }
+
+  function playRound(humanChoice,computerChoice){
+    humanChoice = humanChoice.toLowerCase();
+    computerChoice = computerChoice.toLowerCase();
+
+    if(humanChoice === computerChoice){
+      return "Draw!"
+    }
+    else if(
+      (humanChoice === "rock" && computerChoice === "scissors") || 
+      (humanChoice === "scissors" && computerChoice === "paper") || 
+      (humanChoice === "paper" && computerChoice === "rock")){
+        humanScore++;
+        return "Player Wins! "+humanChoice +" beats " + computerChoice;
+      }
+    else if(
+      (computerChoice === "rock" && humanChoice === "scissors") || 
+      (computerChoice === "scissors" && humanChoice === "paper") || 
+      (computerChoice === "paper" && humanChoice === "rock")){
+        computerScore++;
+        return "Computer wins! " + computerChoice + " beats " + humanChoice;
+    }
+    else{
+    return "Invalid input. Please choose 'rock', 'paper', or 'scissors'."
+    }
+  }
+
+  const human = getHumanChoice();
+  const computer = getComputerChoice();
+  console.log(playRound(human,computer));
+
+
+
+
+  </script>
+
+</body>
+</html>
