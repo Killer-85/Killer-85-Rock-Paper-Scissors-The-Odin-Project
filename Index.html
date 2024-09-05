@@ -19,7 +19,7 @@
   }
 
   function getHumanChoice(){
-    const choice = prompt("Please choose - rock, paper or dcissors: ");
+    const choice = prompt("Please choose - rock, paper or scissors: ");
     return choice;
   }
 
@@ -28,32 +28,35 @@
     computerChoice = computerChoice.toLowerCase();
 
     if(humanChoice === computerChoice){
-      return "Draw!"
+      return "Draw! " + ". Player points: "+ humanScore +". Computer points: "+computerScore;
     }
     else if(
       (humanChoice === "rock" && computerChoice === "scissors") || 
       (humanChoice === "scissors" && computerChoice === "paper") || 
       (humanChoice === "paper" && computerChoice === "rock")){
         humanScore++;
-        return "Player Wins! "+humanChoice +" beats " + computerChoice;
+        return "Player Wins! "+humanChoice +" beats " + computerChoice + ". Player points: "+ humanScore +". Computer points: "+computerScore;
       }
     else if(
       (computerChoice === "rock" && humanChoice === "scissors") || 
       (computerChoice === "scissors" && humanChoice === "paper") || 
       (computerChoice === "paper" && humanChoice === "rock")){
         computerScore++;
-        return "Computer wins! " + computerChoice + " beats " + humanChoice;
+        return "Computer wins! " + computerChoice + " beats " + humanChoice + ". Player points: "+ humanScore +". Computer points: "+computerScore;
     }
     else{
     return "Invalid input. Please choose 'rock', 'paper', or 'scissors'."
     }
   }
 
-  const human = getHumanChoice();
-  const computer = getComputerChoice();
-  console.log(playRound(human,computer));
+  let count = 5;
 
-
+  while(count > 0){
+    let human = getHumanChoice();
+    let computer = getComputerChoice();
+    console.log(playRound(human,computer));
+    count--;
+  }
 
 
   </script>
