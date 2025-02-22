@@ -1,0 +1,38 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+.container{
+  width: 400px;
+  margin: 0 auto;
+  background-color: #E195AB;
+  text-align: center;
+  padding: 16px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+.score-board{
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+button{
+  padding: 8px 16px;
+  border:none;
+  border-radius: 10px;
+  background-color: #DE3163;
+  color: #FFEDFA;
+  margin-top: 8px;
+  margin-right: 10px;
+}
+
+.final{
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+
